@@ -6,15 +6,11 @@ import os
 import openai
 import json
 openai.api_key = api
-fileio=[
-    "Write a program to create a csv file that we can directly open in MS-Excel.",
-    "Read the data stored in MS-Excel file and convert it into a dictionary. The record contains rollno, name of student, marks of three subjects. Also calculate total. Display the dictionary data on the monitor.",
-    "Accept contact details from the user and create a vcard that we can directly store in our mobile.",
-    "Create a specific subdirectory and copy one file from another subdirectory to this newly created subdirectory.",
-    "Write a program to copy contents of one file to another. While doing so, replace all lowercase characters into uppercase characters.",
-    "Write a program that merges lines alternatively from two files and writes the results to new file. If one file has less number of lines than the other,  the remaining lines from the larger file should be simply copied into the target file.",
-    "If an Employee object contains following details: empcode, empname, Date of Joining, Salary Write a program to serialize and deserialize this data.",
-    "Given a text file, write a program to create another text file deleting the words ‘a’, ‘the’, ‘an’ and replacing each one of them with a blank space."
+string = [
+    "Count how many vowels are there in a string. Accept the string from the user.",
+    "Write your own functions (without using built-in functions) to convert all characters of a string into lower case/upper case/toggle case.",
+    "Accept two strings. Check whether one string is there in another string.",
+    "Write a function that removes one string from another string, if present. E.g. Onestring = “abcdef”, removestring = “cd”. The finalstring should contain “abef”."
 ]
 
 
@@ -32,7 +28,7 @@ def openaiAnswer(question):
     text = json.loads(json.dumps(response['choices']))[0]['text']
     return text
 count = 0 
-for i in fileio:
+for i in string:
     print(i)
     count +=1
     with open(f'./normal/{count}.py','w') as f:
